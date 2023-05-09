@@ -51,10 +51,12 @@ public class Dado {
             public void run() {
                 String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
 
-                System.out.println(String.format("%.2f %%", api.getProcessadorEmUso()));
-                System.out.println(String.format("%.2f GB", finalUsoDisco));
-                System.out.println(timeStamp);
-                System.out.println(String.format("%.2f GB", finalUsoRam));
+                System.out.println("=========================================================");
+                System.out.println(String.format("Processador: %.2f %%", api.getProcessadorEmUso()));
+                System.out.println(String.format("Disco: %.2f GB", finalUsoDisco));
+                System.out.println("Horário: " + timeStamp);
+                System.out.println(String.format("Ram: %.2f GB", finalUsoRam));
+                System.out.println("=========================================================");
             }
         }, 0, 5000);
         new Timer().scheduleAtFixedRate(new TimerTask() {
@@ -63,14 +65,13 @@ public class Dado {
                 System.out.println("Dentro do timertask");
                 List<String> janelas = new ArrayList();
                 List<Long> janelasPid = new ArrayList();
-                System.out.println("JANELAS: ");
                 for (int i = 0; i < janelaGrupo.getTotalJanelasVisiveis(); i++) {
                     if (janelaGrupo.getJanelasVisiveis().get(i).getTitulo().length() > 0) {
                         janelas.add(janelaGrupo.getJanelasVisiveis().get(i).getTitulo());
                         janelasPid.add(janelaGrupo.getJanelasVisiveis().get(i).getPid());
                     }
                 }
-                System.out.println("INSERT: " + janelas.size());
+                System.out.println("=========================================================");
                 List<RedeInterface> redes = new ArrayList();
 
                 for (int i = 0; i < rede.getGrupoDeInterfaces().getInterfaces().size(); i++) {
@@ -87,6 +88,7 @@ public class Dado {
                     logService.salvarLog(log);
                     System.out.println(janelas.get(j));
                 }
+                System.out.println("=========================================================");
             }
         }, 0, 60000);
 
