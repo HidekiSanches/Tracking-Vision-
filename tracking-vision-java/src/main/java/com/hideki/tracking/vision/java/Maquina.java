@@ -147,9 +147,4 @@ public class Maquina {
         this.fkJanelasBloqueadas = fkJanelasBloqueadas;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Informações da maquina:\n id: %d\n Host Name: %s\n Status: %d\n Modelo CPU: %s\n Clock CPU: %.2f\n Modelo RAM: %s\n Capacidade total RAM: %.2f\n Capacidade total disco: %.2f\n Leitura disco: %.2f\n Escrita disco: %.2f\n idEmpresa: %d\n idJanela: %d", idMaquina, hostnameMaquina, status, nomeModeloCpu, clockCpu, capacidadeTotalRam, capacidadeTotalDisco, escritaDisco, fkEmpresa, fkJanelasBloqueadas);
-    }
-
 }

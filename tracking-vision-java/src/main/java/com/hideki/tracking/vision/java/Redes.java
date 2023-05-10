@@ -77,9 +77,4 @@ public class Redes {
         this.fkMaquina = fkMaquina;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Dados de rede capturado:\n id: %d\n Nome da rede: %s\n Nome de exibição: %s\n IPV4: %s\n Mac: %s\n idMaquina: %d", idRede, nomeRede, nomeExibicao, ipv4, mac, fkMaquina);
-    }
-
 }

@@ -87,9 +87,4 @@ public class Funcionario {
         this.fkEmpresa = fkEmpresa;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Funcionario:\n id: %d\n Nome: %s\n Email: %s\n CPF: %s\n Cargo: %s\n Senha: *******\n idEmpresa: %d", idFuncionario, nome, email, cpf, cargo, fkEmpresa);
-    }
-
 }
